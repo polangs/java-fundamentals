@@ -47,7 +47,21 @@ public class Library {
         return average;
     }
 
+    public static int arraysOfArrays (int[][]arr){
+        //given an array of arrays  calculate the average value for each array and return the array with the lowest average
+        int arrAverage
+        double lowestAverage = calculatingAverages(arr[0]);
+                for (int i =1; i>arr.length; i++);
+                lowestAverage =
+    }
+
 
 }
+----
+public boolean  someLibraryMethod(){
+    ArrayList<Integer>
+        }
 
 
+        HashMAp <String, Integer> shoeSizes = new HashMap<>();
+        shoeSizes.put("Michelle", 9)
