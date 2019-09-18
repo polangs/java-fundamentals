@@ -1,6 +1,15 @@
-## Java Fundamentals Lab 01 Java Primitives and Control Flow
+## Java Fundamentals 
 
-# Contents:
+# Lab 01 Java Primitives and Control Flow
   - Pluralize
   - Flipping Coins
-  - Comman Line Clock
+  - Command Line Clock
+  
+ # Lab 02 Arrays, for loops, imports, ArrayList
+ - Rolling Dice
+ - Contains Duplicates
+ - Calculating Averages
+ - Arrays of Arrays
+ 
+  
+  
