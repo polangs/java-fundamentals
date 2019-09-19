@@ -3,6 +3,7 @@
  */
 package basiclibrary;
 
+import java.util.HashSet;
 import java.util.Random;
 //i got multiple helps from michelle, jon, quang, jeff to figure out how to generate numbers, rolling dice and intelliJ prob
 
@@ -47,21 +48,69 @@ public class Library {
         return average;
     }
 
-    public static int arraysOfArrays (int[][]arr){
-        //given an array of arrays  calculate the average value for each array and return the array with the lowest average
-        int arrAverage
-        double lowestAverage = calculatingAverages(arr[0]);
-                for (int i =1; i>arr.length; i++);
-                lowestAverage =
-    }
+//    public static int arraysOfArrays (int[][]arr){
+//        //given an array of arrays  calculate the average value for each array and return the array with the lowest average
+//        int arrAverage
+//        double lowestAverage = calculatingAverages(arr[0]);
+//                for (int i =1; i>arr.length; i++);
+//                lowestAverage =
+//    }
 
 
-}
-----
-public boolean  someLibraryMethod(){
-    ArrayList<Integer>
+    public static String analyzingWeatherData(int[][] array){
+        //creating hashSet to keep track of all the temp seen
+        HashSet<Integer> seenTemperatures = new HashSet<>();
+        //comparing the min value to the max value and reassigning the min to max
+        //stack overflow https://stackoverflow.com/questions/22768507/using-a-tally-array-to-keep-counts-of-another-array
+        int minValue = Integer.MAX_VALUE;
+
+        int maxValue = Integer.MIN_VALUE;
+        //storing message as output
+        String message = "";
+
+
+        //use seattle weather data
+        //iterate  through all data to find min and max values
+        // use hashSet of Integer to keep track of all unique temperatures seen
+        for (int[] week : array){
+            for (int day : week){
+                //iterate from the min and max temp
+                if (day > maxValue) {
+                    maxValue = day;
+                }else if (day < minValue){
+                    minValue = day;
+                }
+                //adding thing to the array for the  Hashset
+                seenTemperatures.add(day);
+            }
         }
 
 
-        HashMAp <String, Integer> shoeSizes = new HashMap<>();
-        shoeSizes.put("Michelle", 9)
+        //got help from quang
+        //create a String containing any temperature not seen during the month
+        message += String.format(message += String.format("High: %d\n", maxValue));
+        message += String.format("Low: %d\n", minValue);
+
+        // Checks which temperatures are not in the range between max and min
+        for (int i = minValue; i <= maxValue; i++) {
+            if (!seenTemperatures.contains(i)) {
+                message += String.format("Never saw temperature: %d\n", i);
+            }
+        }
+        //return that String
+        return message;
+    }
+
+//    public static String tally (List<String> votes){
+//        //function called tally
+//        int numberOfVotes = 0;
+//
+//        //accepts a list of strings representing votes
+//        HashMap<String, Integer> tallyVoteCount = new HashMap<>();
+//        for (String character : tallyVoteCount) {
+//            characterCounts.put(character, 1);
+//        //returns one string to show what got most votes
+
+
+    }
+
