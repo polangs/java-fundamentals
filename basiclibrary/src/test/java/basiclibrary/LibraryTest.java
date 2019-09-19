@@ -5,53 +5,97 @@ package basiclibrary;
 
 import basiclibrary.Library;
 import org.junit.Test;
+
+import static basiclibrary.Library.*;
 import static org.junit.Assert.*;
+
 
 
 public class LibraryTest {
 
-   @Test
-    public void testRollingDice() {
-     //check the length of the newArray
-     int[] array = Library.roll(3);
-     assertEquals("this is the result []", array.length, 3);
-     for (int i = 0; i < array.length; i++) {
-       assertTrue(array[i] >= 1 && array[i] <= 6);
-     }
-   }
-
-     @Test
-     public void testRollingDiceZero(){
-       //check the length of the newArray
-       int[] array = Library.roll(0);
-       assertEquals("this is the result []", array.length, 0);
-       for (int i = 0; i < array.length; i++) {
-         assertTrue(array[i]>=1 && array[i]<=6);
-       }
+  @Test
+  public void testRollingDice() {
+    //check the length of the newArray
+    int[] array = Library.roll(3);
+    assertEquals("this is the result []", array.length, 3);
+    for (int i = 0; i < array.length; i++) {
+      assertTrue(array[i] >= 1 && array[i] <= 6);
     }
-      @Test
-      public void testContainsDuplicates(){
-       assertTrue(Library.containsDuplicates(new int[]{1,2,3,4,1}));
-    }
-
-      @Test
-      public void testContainsDuplicatesZero(){
-        assertFalse(Library.containsDuplicates(new int[]{}));
   }
 
-      @Test
-      public void testCalculatingAverages(){
-        int[] inputArr = { 10, 10, 20, 20};
-        int expected = 15;
-        assertEquals("it should give back the average in the array", expected, Library.calculatingAverages(inputArr));
-      }
+  @Test
+  public void testRollingDiceZero() {
+    //check the length of the newArray
+    int[] array = Library.roll(0);
+    assertEquals("this is the result []", array.length, 0);
+    for (int i = 0; i < array.length; i++) {
+      assertTrue(array[i] >= 1 && array[i] <= 6);
+    }
+  }
 
-      @Test
-        public void testarraysOfArrays(){
-        //calculate the average value for each array
-        //return the array of the lowest value
+  @Test
+  public void testContainsDuplicates() {
+    assertTrue(Library.containsDuplicates(new int[]{1, 2, 3, 4, 1}));
+  }
 
-      }
+  @Test
+  public void testContainsDuplicatesZero() {
+    assertFalse(Library.containsDuplicates(new int[]{}));
+  }
 
+  @Test
+  public void testCalculatingAverages() {
+    int[] inputArr = {10, 10, 20, 20};
+    int expected = 15;
+    assertEquals("it should give back the average in the array", expected, Library.calculatingAverages(inputArr));
+  }
+
+//      @Test
+//        public void testarraysOfArrays(){
+//        //calculate the average value for each array
+//        //return the array of the lowest value
+//
+//      }
+
+  @Test
+  public void testAnalyzingWeatherData() {
+    int[][] weeklyMonthTemperatures = {
+            {66, 64, 58, 65, 71, 57, 60},
+            {57, 65, 65, 70, 72, 65, 51},
+            {55, 54, 60, 53, 59, 57, 61},
+            {65, 56, 55, 52, 55, 62, 57}
+    };
+    String expected = "High: 72\n" +
+            "Low: 51\n" +
+            "Never saw temperature: 63\n" +
+            "Never saw temperature: 67\n" +
+            "Never saw temperature: 68\n" +
+            "Never saw temperature: 69\n";
+
+    assertEquals(expected, analyzingWeatherData(weeklyMonthTemperatures));
+
+  }
+
+//      @Test
+//    public void testTally(){
+//     int[] votesTally = {
+//
+//             List < String > votes = new ArrayList<>();
+//        votes.add("Bush");
+//        votes.add("Bush");
+//        votes.add("Bush");
+//        votes.add("Shrub");
+//        votes.add("Hedge");
+//        votes.add("Shrub");
+//        votes.add("Bush");
+//        votes.add("Hedge");
+//        votes.add("Bush");
+//}
+//        String winner = tally(votes);
+//        System.out.println(winner + " received the most votes!");
+//      }
+//
 }
+
+
 
