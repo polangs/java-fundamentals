@@ -46,7 +46,12 @@ public class LibraryTest {
         assertEquals("it should give back the average in the array", expected, Library.calculatingAverages(inputArr));
       }
 
+      @Test
+        public void testarraysOfArrays(){
+        //calculate the average value for each array
+        //return the array of the lowest value
 
+      }
 
 }
 
